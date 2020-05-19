@@ -24,12 +24,12 @@ def handler():
         inserter("You must enter only amount of bitcoins")
 
 
-bitcoin_api_url = 'https://blockchain.info/ticker/'
+bitcoin_api_url = 'https://blockchain.info/ticker'
 coursmoney_url = 'http://bank-ua.com/export/exchange_rate_cash.json'
 
 response = requests.get(bitcoin_api_url)
 response_json = response.json()
-price_of_usd = float(response_json["USD"]['buy'])
+price_of_usd = (response_json["USD"]['buy'])
 
 cours = requests.get(coursmoney_url)
 cours_json = cours.json()
